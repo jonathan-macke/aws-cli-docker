@@ -8,7 +8,10 @@ RUN export PATH && \
     yum install -y wget && \
 	wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm && \
 	rpm -ivh epel-release-7-9.noarch.rpm && \
-	yum install -y python34 python34-setuptools && \
+	yum install -y python34 python34-setuptools groff git && \
 	easy_install-3.4 pip && \
 	pip install awsebcli --upgrade --user && \
-	pip install awscli --upgrade --user
+	pip install awscli --upgrade --user && \
+	mkdir /root/workspace
+	
+WORKDIR /apps
